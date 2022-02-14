@@ -22,7 +22,12 @@ export async function signInUser(email, password) {
     const resp = await client.auth.signIn;
 }
 
-export async function checkAuth() { }
+export async function checkAuth() {
+    const resp = await getUser();
+    if (!resp.user) {
+        window.location.replace('../');
+    }
+}
 
 export async function redirectIfLoggedIn() {
     if (await getUser()) {
