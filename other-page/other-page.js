@@ -5,8 +5,10 @@ import { checkAuth, logout } from '../fetch-utils.js';
 
 const logoutBtn = document.getElementById('logout');
 
-logoutBtn.addEventListener('click', async (e) => {
+checkAuth();
+
+logoutBtn.addEventListener('click', () => {
     console.log('clicking logout button');
-    await logout();
-    await checkAuth();
+    logout();
+    checkAuth();
 });
