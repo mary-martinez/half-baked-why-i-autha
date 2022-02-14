@@ -19,6 +19,7 @@ export async function signupUser(email, password) {
 export async function signInUser(email, password) {
     const user = { email, password };
     const resp = await client.auth.signIn(user);
+    return resp.user;
 }
 
 export function checkAuth() {
