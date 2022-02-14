@@ -9,13 +9,19 @@ export function getUser() {
 }
 
 export async function signupUser(email, password) {
-    
+    const newUser = { email, password };
+    // console.log(newUser);
+    const resp = await client.auth.signUp(newUser);
+    // console.log(resp);
+    // console.log(resp.user);
+    return resp.user;
 }
 
-export async function signInUser(email, password) {}
+export async function signInUser(email, password) { }
 
-export async function checkAuth() {}
+export async function checkAuth() { }
 
-export async function redirectIfLoggedIn() {}
+export async function redirectIfLoggedIn() { }
 
-export async function logout() {}
+export async function logout() { }
+
