@@ -30,5 +30,8 @@ export async function redirectIfLoggedIn() {
     }
 }
 
-export async function logout() { }
+export async function logout() {
+    const resp = await client.auth.logout;
+    return resp;
+}
 
